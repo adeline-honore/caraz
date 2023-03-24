@@ -18,11 +18,31 @@ class GarageViewController: UIViewController {
         super.viewDidLoad()
         
         garageView = view as? GarageView
+        configView()
+        
+        UserDefaults.standard.value(forKey: "carChoosen")
+        showCar()
     }
     
     
+    func configView() {
+        garageView.welcomeLabel.text = Texts.welcomeLabelText.rawValue
+        garageView.actionLabel.text = Texts.actionLabelText.rawValue
+        
+    }
+    
     // MARK: - UserDefaults
     
+    private func showCar() {
+        
+        if UserDefaults.standard.value(forKey: "carChoosen") != nil {
+            garageView.choiceLabel.text = Texts.startChoiceLabel.rawValue
+        } else {
+            garageView.choiceLabel.text = Texts.noChoosenCar.rawValue
+        }
+        
+        
+    }
     
     
     // MARK: - Choose the car
