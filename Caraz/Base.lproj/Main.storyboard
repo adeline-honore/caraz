@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P7A-kY-T95">
-                                <rect key="frame" x="20" y="280.66666666666663" width="353" height="290.66666666666663"/>
+                                <rect key="frame" x="20" y="188.33333333333334" width="353" height="475.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nT-ZU-zHJ" userLabel="Welcome Label">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
@@ -149,25 +149,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-Wu-uWX">
-                                        <rect key="frame" x="0.0" y="40.666666666666615" width="353" height="198.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="40.666666666666643" width="353" height="198.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="U2s-Wu-uWX" secondAttribute="height" multiplier="16:9" id="HrL-JK-zTU"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da2-lM-udR">
-                                        <rect key="frame" x="0.0" y="239.33333333333331" width="353" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="238.99999999999997" width="353" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FLj-Wf-Okm">
-                                        <rect key="frame" x="0.0" y="259.66666666666669" width="353" height="32"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                            <segment title=""/>
-                                        </segments>
-                                    </segmentedControl>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCH-cL-QpR">
+                                        <rect key="frame" x="0.0" y="260" width="353" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="4jF-mw-fvz"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="RUC-lg-L3h"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -182,7 +181,7 @@
                             <outlet property="actionLabel" destination="da2-lM-udR" id="Fzb-bX-82V"/>
                             <outlet property="choiceImage" destination="U2s-Wu-uWX" id="57Y-0A-a1z"/>
                             <outlet property="choiceLabel" destination="6qn-Or-3AY" id="CAm-bU-TVj"/>
-                            <outlet property="choiceSegmentedControl" destination="FLj-Wf-Okm" id="dVW-mj-RZW"/>
+                            <outlet property="choicePickerView" destination="JCH-cL-QpR" id="ZMP-jG-Mrx"/>
                             <outlet property="welcomeLabel" destination="9nT-ZU-zHJ" id="rMB-dL-3k8"/>
                         </connections>
                     </view>

@@ -17,8 +17,6 @@ class GarageView: UIView {
     
     @IBOutlet weak var actionLabel: UILabel!
     
-    @IBOutlet weak var choiceSegmentedControl: UISegmentedControl!
-    
-    
+    @IBOutlet weak var choicePickerView: UIPickerView!
     
 }
