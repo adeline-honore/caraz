@@ -19,4 +19,6 @@ class GarageView: UIView {
     
     @IBOutlet weak var choicePickerView: UIPickerView!
     
+    @IBOutlet weak var wheatherButton: UIButton!
+    
 }

@@ -58,12 +58,17 @@ class GarageViewController: UIViewController {
     
     // MARK: - Choose the car
     
-    private func chooseCar() {
+    @IBAction func didTapWeatherButton() {
         
     }
-
     
-
+    private func chooseCarAccordingToTheWeather() {
+        
+    }
+    
+    
+    
+    
 }
 
 
@@ -85,7 +90,7 @@ extension GarageViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if component != 0 {
+        if row != 0 {
             UserDefaults.standard.set(pickerViewArray[row], forKey: "carChoosen")
         }
     }
