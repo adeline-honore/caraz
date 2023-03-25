@@ -13,7 +13,7 @@ class WeatherViewController: UIViewController {
     private var weatherView: WeatherView!
     private var weatherService: WeatherServiceProtocol = WeatherService(network: Network())
     private var placeId: Int = 0
-    private var carsUI: [CarUI] = []
+    var carsUI: [CarUI] = []
     private var carUI: CarUI?
     
     // MARK: - Init

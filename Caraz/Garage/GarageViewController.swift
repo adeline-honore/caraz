@@ -37,21 +37,23 @@ class GarageViewController: UIViewController {
 //        saveCarIntoCoreData()
     }
     
+    // MARK: - get cars from Core Data
+    
     func getCars() {
         do {
             let carsCD = try repository.getEntities()
             carsUI = carsCD.map { CarUI(carCD: $0)}
-            
         } catch {
             print("error to get cars from Core Data")
         }
     }
     
+    // MARK: - Configure view
     
     private func configureView() {
         garageView.welcomeLabel.text = Texts.welcomeLabelText.rawValue
         garageView.actionLabel.text = Texts.actionLabelText.rawValue
-        
+        garageView.wheatherButton.titleLabel?.text = Texts.weatherButton.rawValue
     }
     
     private func configurePickerView() {
@@ -77,16 +79,21 @@ class GarageViewController: UIViewController {
     // MARK: - Choose the car
     
     @IBAction func didTapWeatherButton() {
-        
+        sendCarsUI()
     }
     
-    private func chooseCarAccordingToTheWeather() {
-        
+    func sendCarsUI() {
+        performSegue(withIdentifier: SegueIdentifier.fromGarageToWeather.rawValue, sender: nil)
     }
     
+    // MARK: - Send informations thanks segue
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.fromGarageToWeather.rawValue {
+            let viewController = segue.destination as? WeatherViewController
+            viewController?.carsUI = carsUI
+        }
+    }
 }
 
 
