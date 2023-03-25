@@ -32,4 +32,9 @@ class WeatherView: UIView {
         temperatureLabel.text = temperatureValue
         detailsLabel.text = detailsValue
     }
+    
+    func configureCarOutlet(nameValue: String, imageValue: UIImage) {
+        carNameLabel.text = nameValue
+        carImage.image = imageValue
+    }
 }

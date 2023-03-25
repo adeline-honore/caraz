@@ -15,4 +15,5 @@ struct CarUI {
     var tankAutonomy: Double
     var distanceTraveled: Double?
     var picture: UIImage
+    var convertible: Bool
 }

@@ -13,6 +13,8 @@ class WeatherViewController: UIViewController {
     private var weatherView: WeatherView!
     private var weatherService: WeatherServiceProtocol = WeatherService(network: Network())
     private var placeId: Int = 0
+    private var carsUI: [CarUI] = []
+    private var carUI: CarUI?
     
     // MARK: - Init
     
@@ -39,7 +41,6 @@ class WeatherViewController: UIViewController {
         weatherService.getData(city: city) { result in
             switch result {
             case .success(let weather):
-                print(weather)
                 self.update(weatherDecode: weather)
             case .failure:
                 print("oups  ")
@@ -52,18 +53,39 @@ class WeatherViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             
             guard let self = self,
-                let weatherImage = UIImage(named: weatherDecode.weather.first?.icon ?? "01d") else { return }
+                  let icon = weatherDecode.weather.first?.icon,
+                  let weatherImage = UIImage(named: weatherDecode.weather.first?.icon ?? "01d") else { return }
             
             self.weatherView.configureWeatherOutlet(welcomeValue: weatherDecode.name,
                                                imageValue: weatherImage,
                                                temperatureValue: self.kelvinToCelsius(kelvin: weatherDecode.main.temp),
                                                detailsValue: weatherDecode.weather.first?.description ?? "pas d'autre details")
             
+            // display car according to the weather
+            self.carUI = self.displayCarAccordingToTheWeather(weatherIcon: icon)
+            UserDefaults.standard.set(self.carUI?.name, forKey: "carChoosen")
+            
+            guard let car = self.carUI else { return }
+            
+            self.weatherView.configureCarOutlet(nameValue: car.name, imageValue: car.picture)
         }
     }
     
     private func kelvinToCelsius(kelvin: Double) -> String {
         return String(format:"%.1f", (kelvin - 273.15)) + " °C"
+    }
+    
+    
+    private func displayCarAccordingToTheWeather(weatherIcon: String) -> CarUI? {
+        var car: CarUI?
+        
+        if weatherIcon == "01d" || weatherIcon == "02d" {
+            car = carsUI.first(where: {$0.convertible == true})
+            return car
+        } else {
+            car = carsUI.first(where: {$0.convertible == false})
+            return car
+        }
     }
     
     // MARK: Get user location
@@ -81,8 +103,6 @@ class WeatherViewController: UIViewController {
         
         listId.forEach { place in
             if (place.coord.lat == lat) && (place.coord.lon == lon) {
-                print(place.name)
-                print(place.id)
                 placeId = place.id
             }
         }
@@ -93,6 +113,4 @@ class WeatherViewController: UIViewController {
         responseWeather = try! JSONDecoder().decode([WeatherListId].self, from: data)
         return responseWeather
     }
-    
-    
 }

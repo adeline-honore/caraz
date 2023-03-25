@@ -24,7 +24,7 @@ class GarageViewController: UIViewController {
         
         UserDefaults.standard.value(forKey: "carChoosen")
         showCar()
-        
+        print(UserDefaults.standard.value(forKey: "carChoosen"))
         
         configurePickerView()
     }
