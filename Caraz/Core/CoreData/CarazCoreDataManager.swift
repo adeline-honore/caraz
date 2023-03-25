@@ -23,5 +23,19 @@ final class CarazCoreDataManager {
     
     func createEntity(carUI: CarUI) throws {
         
+        let entity = NSEntityDescription.entity(forEntityName: "CarCD",
+                                                in: coreDataStack.viewContext)!
+        
+        let carCD = NSManagedObject(entity: entity, insertInto: coreDataStack.viewContext)
+        
+        carCD.setValue(carUI.id, forKey: "id")
+        carCD.setValue(carUI.name, forKey: "name")
+        carCD.setValue(carUI.brand, forKey: "brand")
+        carCD.setValue(carUI.tankAutonomy, forKey: "tankAutonomy")
+        carCD.setValue(carUI.distanceTraveled, forKey: "distanceTraveled")
+        carCD.setValue(carUI.picture, forKey: "pictureBinary")
+        carCD.setValue(carUI.convertible, forKey: "convertible")
+        
+        try coreDataStack.viewContext.save()
     }
 }
