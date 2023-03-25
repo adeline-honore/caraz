@@ -26,36 +26,64 @@
             </objects>
             <point key="canvasLocation" x="-1175" y="13"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
+        <scene sceneID="8Hu-8h-IGw">
+            <objects>
+                <navigationController id="CSy-Ay-C7J" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="map" catalog="system" id="IX8-jd-yZc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Vl-VN-8Ys">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Etu-N6-eSS" kind="relationship" relationship="rootViewController" id="Pil-AD-fn6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrL-rh-GIR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1176" y="1050"/>
+        </scene>
+        <!--Map View Controller-->
         <scene sceneID="dDi-jI-4bG">
             <objects>
-                <viewController id="Etu-N6-eSS" sceneMemberID="viewController">
+                <viewController id="Etu-N6-eSS" customClass="MapViewController" customModule="Caraz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yro-ar-fxz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-eU-Hno">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVJ-K3-Xe8">
+                                <rect key="frame" x="329" y="127" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BVJ-K3-Xe8" secondAttribute="height" multiplier="1:1" id="8wA-vt-gx6"/>
+                                    <constraint firstAttribute="height" constant="32" id="jcS-4I-ijr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LQj-wn-evN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Hbm-eU-Hno" firstAttribute="top" secondItem="LQj-wn-evN" secondAttribute="top" id="2pr-k3-ygb"/>
-                            <constraint firstItem="Hbm-eU-Hno" firstAttribute="top" secondItem="LQj-wn-evN" secondAttribute="top" id="bdA-yF-DQO"/>
-                            <constraint firstItem="Hbm-eU-Hno" firstAttribute="leading" secondItem="LQj-wn-evN" secondAttribute="leading" id="gnY-bv-91M"/>
-                            <constraint firstItem="LQj-wn-evN" firstAttribute="bottom" secondItem="Hbm-eU-Hno" secondAttribute="bottom" id="jo6-4N-6JL"/>
+                            <constraint firstItem="Hbm-eU-Hno" firstAttribute="top" secondItem="yro-ar-fxz" secondAttribute="top" id="8II-y1-cEs"/>
+                            <constraint firstItem="LQj-wn-evN" firstAttribute="trailing" secondItem="BVJ-K3-Xe8" secondAttribute="trailing" constant="32" id="JTQ-wC-f1l"/>
+                            <constraint firstItem="Hbm-eU-Hno" firstAttribute="bottom" secondItem="LQj-wn-evN" secondAttribute="bottom" id="Pr0-qW-wRY"/>
+                            <constraint firstItem="BVJ-K3-Xe8" firstAttribute="top" secondItem="LQj-wn-evN" secondAttribute="top" constant="24" id="njL-6A-Je7"/>
                             <constraint firstItem="Hbm-eU-Hno" firstAttribute="leading" secondItem="LQj-wn-evN" secondAttribute="leading" id="pVa-JG-Skn"/>
-                            <constraint firstItem="LQj-wn-evN" firstAttribute="trailing" secondItem="Hbm-eU-Hno" secondAttribute="trailing" id="ubZ-Sr-kVb"/>
                             <constraint firstItem="LQj-wn-evN" firstAttribute="trailing" secondItem="Hbm-eU-Hno" secondAttribute="trailing" id="x4L-mZ-aCt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jd3-us-hNo"/>
+                    <connections>
+                        <outlet property="mapView" destination="Hbm-eU-Hno" id="gui-Nn-7ib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnD-bR-H6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-399" y="1050"/>
+            <point key="canvasLocation" x="-182.44274809160305" y="1050"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VnQ-RW-lKl">
@@ -68,7 +96,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ipu-Rx-GWL" kind="relationship" relationship="viewControllers" id="Aid-pb-iQT"/>
-                        <segue destination="IUx-zR-aHS" kind="relationship" relationship="viewControllers" id="Vc7-G0-dEB"/>
+                        <segue destination="CSy-Ay-C7J" kind="relationship" relationship="viewControllers" id="3wM-0j-rz6"/>
                         <segue destination="Utm-TP-aTF" kind="relationship" relationship="viewControllers" id="efK-yf-z26"/>
                         <segue destination="7PZ-YU-hpl" kind="relationship" relationship="viewControllers" id="uBe-kM-H8K"/>
                     </connections>
@@ -108,22 +136,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RK-TY-MOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1176" y="3019"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="avr-4c-fbR">
-            <objects>
-                <viewController id="IUx-zR-aHS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lD5-Iq-exq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6iP-Cv-5vh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="calendar.circle.fill" catalog="system" id="2gc-pe-e2b"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lku-Qx-nMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1176" y="1050"/>
         </scene>
         <!--Garage View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -346,10 +358,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle.fill" catalog="system" width="128" height="123"/>
         <image name="car" catalog="system" width="128" height="95"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="hand.point.right.fill" catalog="system" width="128" height="97"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
