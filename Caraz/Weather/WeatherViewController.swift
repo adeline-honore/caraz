@@ -32,7 +32,6 @@ class WeatherViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
     // MARK: - Display weather informations
     
     private func showWeatherInformations(city: Int) {
@@ -41,10 +40,30 @@ class WeatherViewController: UIViewController {
             switch result {
             case .success(let weather):
                 print(weather)
+                self.update(weatherDecode: weather)
             case .failure:
                 print("oups  ")
             }
         }
+    }
+    
+    private func update(weatherDecode: WeatherStructure) {
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let self = self,
+                let weatherImage = UIImage(named: weatherDecode.weather.first?.icon ?? "01d") else { return }
+            
+            self.weatherView.configureWeatherOutlet(welcomeValue: weatherDecode.name,
+                                               imageValue: weatherImage,
+                                               temperatureValue: self.kelvinToCelsius(kelvin: weatherDecode.main.temp),
+                                               detailsValue: weatherDecode.weather.first?.description ?? "pas d'autre details")
+            
+        }
+    }
+    
+    private func kelvinToCelsius(kelvin: Double) -> String {
+        return String(format:"%.1f", (kelvin - 273.15)) + " °C"
     }
     
     // MARK: Get user location
