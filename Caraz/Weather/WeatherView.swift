@@ -22,4 +22,14 @@ class WeatherView: UIView {
     
     @IBOutlet weak var carNameLabel: UILabel!
     
+    
+    func configureWeatherOutlet(welcomeValue: String,
+                   imageValue: UIImage,
+                   temperatureValue: String,
+                   detailsValue: String) {
+        welcomeLabel.text = "Bienvenue. Aujourd'hui à " + "le temps est :"
+        iconImage.image = imageValue
+        temperatureLabel.text = temperatureValue
+        detailsLabel.text = detailsValue
+    }
 }
