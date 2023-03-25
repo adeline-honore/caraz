@@ -25,16 +25,18 @@ class GarageViewController: UIViewController {
         super.viewDidLoad()
         
         garageView = view as? GarageView
-        configureView()
         
         UserDefaults.standard.value(forKey: "carChoosen")
-        showCar()
-        configurePickerView()
         
         getCars()
+        configurePickerView()
         
         // to save a new car
 //        saveCarIntoCoreData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showCar()
     }
     
     // MARK: - get cars from Core Data
@@ -48,33 +50,28 @@ class GarageViewController: UIViewController {
         }
     }
     
-    // MARK: - Configure view
-    
-    private func configureView() {
-        garageView.welcomeLabel.text = Texts.welcomeLabelText.rawValue
-        garageView.actionLabel.text = Texts.actionLabelText.rawValue
-        garageView.wheatherButton.titleLabel?.text = Texts.weatherButton.rawValue
-    }
+    // MARK: - Configure view & UserDefaults
     
     private func configurePickerView() {
         
         pickerViewArray.append("- Choisissez -")
         
-        pickerViewArray.append("r")
-        pickerViewArray.append("m")
+        carsUI.forEach { car in
+            pickerViewArray.append(car.name)
+        }
     }
-    
-    // MARK: - UserDefaults
-    
+        
     private func showCar() {
+        garageView.configureView()
         
         if UserDefaults.standard.value(forKey: "carChoosen") != nil {
             garageView.choiceLabel.text = Texts.startChoiceLabel.rawValue
+            garageView.choiceImage.image = carsUI.first(where: {$0.name == UserDefaults.standard.value(forKey: "carChoosen") as! String})?.picture
         } else {
             garageView.choiceLabel.text = Texts.noChoosenCar.rawValue
+            garageView.choiceImage.isHidden = true
         }
     }
-    
     
     // MARK: - Choose the car
     

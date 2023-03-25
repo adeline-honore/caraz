@@ -21,4 +21,10 @@ class GarageView: UIView {
     
     @IBOutlet weak var wheatherButton: UIButton!
     
+    
+    func configureView() {
+        welcomeLabel.text = Texts.welcomeLabelText.rawValue
+        actionLabel.text = Texts.actionLabelText.rawValue
+        wheatherButton.titleLabel?.text = Texts.weatherButton.rawValue
+    }
 }

@@ -34,7 +34,7 @@ class WeatherView: UIView {
     }
     
     func configureCarOutlet(nameValue: String, imageValue: UIImage) {
-        carNameLabel.text = nameValue
+        carNameLabel.text = "Il est conseillé de conduire : " + nameValue
         carImage.image = imageValue
     }
 }
