@@ -3,4 +3,54 @@
    uuid = "0459B4C4-F282-4DFC-A347-896B7201BA0E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEF556AA-80B2-45D0-A84A-5189DBF91C25"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Caraz/Garage/GarageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getCars()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EEF556AA-80B2-45D0-A84A-5189DBF91C25 - 8848e7ae7988d7d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Caraz.GarageViewController.getCars() -&gt; ()"
+                  moduleName = "Caraz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeline/Desktop/git/Caraz/Caraz/Garage/GarageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "226">
+               </Location>
+               <Location
+                  uuid = "EEF556AA-80B2-45D0-A84A-5189DBF91C25 - 8848e7ae7988d7d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Caraz.GarageViewController.getCars() -&gt; ()"
+                  moduleName = "Caraz"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeline/Desktop/git/Caraz/Caraz/Garage/GarageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "502">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

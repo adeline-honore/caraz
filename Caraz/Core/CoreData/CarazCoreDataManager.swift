@@ -33,9 +33,19 @@ final class CarazCoreDataManager {
         carCD.setValue(carUI.brand, forKey: "brand")
         carCD.setValue(carUI.tankAutonomy, forKey: "tankAutonomy")
         carCD.setValue(carUI.distanceTraveled, forKey: "distanceTraveled")
-        carCD.setValue(carUI.picture, forKey: "pictureBinary")
+        carCD.setValue(carUI.pictureBinary, forKey: "pictureBianry")
         carCD.setValue(carUI.convertible, forKey: "convertible")
         
         try coreDataStack.viewContext.save()
     }
+    
+    
+    func getEntities() throws -> [CarCD] {
+            let request: NSFetchRequest<CarCD> = CarCD.fetchRequest()
+            do {
+                return try coreDataStack.viewContext.fetch(request)
+            } catch {
+                throw error
+            }
+        }
 }

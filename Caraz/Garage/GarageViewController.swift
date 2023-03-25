@@ -14,6 +14,11 @@ class GarageViewController: UIViewController {
     private var garageView: GarageView!
     private var pickerViewArray: [String] = []
     
+    private let repository = CarazCoreDataManager(
+        coreDataStack: CoreDataStack(),
+        managedObjectContext: CoreDataStack().viewContext)
+    private var carsUI: [CarUI] = []
+    
     // MARK: - Init
     
     override func viewDidLoad() {
@@ -24,9 +29,22 @@ class GarageViewController: UIViewController {
         
         UserDefaults.standard.value(forKey: "carChoosen")
         showCar()
-        print(UserDefaults.standard.value(forKey: "carChoosen"))
-        
         configurePickerView()
+        
+        getCars()
+        
+        // to save a new car
+//        saveCarIntoCoreData()
+    }
+    
+    func getCars() {
+        do {
+            let carsCD = try repository.getEntities()
+            carsUI = carsCD.map { CarUI(carCD: $0)}
+            
+        } catch {
+            print("error to get cars from Core Data")
+        }
     }
     
     
@@ -92,6 +110,27 @@ extension GarageViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         
         if row != 0 {
             UserDefaults.standard.set(pickerViewArray[row], forKey: "carChoosen")
+        }
+    }
+}
+
+
+extension GarageViewController {
+    func saveCarIntoCoreData() {
+        
+        guard let image = UIImage(named: "") else { return }
+        
+        let carToSave: CarUI = CarUI(id: "",
+                              name: "",
+                              brand: "",
+                              tankAutonomy: 1200,
+                              picture: image,
+                              convertible: true)
+        
+        do {
+            try self.repository.createEntity(carUI: carToSave)
+        } catch {
+            print("error to save into Core Data")
         }
     }
 }
