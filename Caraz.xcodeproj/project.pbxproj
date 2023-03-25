@@ -21,8 +21,9 @@
 		6E5BA29D29CF7B8A00539249 /* CarazCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BA29C29CF7B8A00539249 /* CarazCoreDataManager.swift */; };
 		6EA6D1A629CF8FC500E15C6A /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1A529CF8FC500E15C6A /* SegueIdentifier.swift */; };
 		6EA6D1A829CF9E9500E15C6A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1A729CF9E9500E15C6A /* MapViewController.swift */; };
+		6EA6D1AD29CFA0AE00E15C6A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1AC29CFA0AE00E15C6A /* LocationManager.swift */; };
+		6EA6D1AF29CFA68500E15C6A /* Extension+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1AE29CFA68500E15C6A /* Extension+MKMapView.swift */; };
 		6EEE4F5F29CE4E69004A072C /* WeatherListId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE4F5E29CE4E69004A072C /* WeatherListId.swift */; };
-		6EEE4F6329CEF55B004A072C /* city-list-FR.json in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE4F6229CEF55B004A072C /* city-list-FR.json */; };
 		6EF9E00C29CC4548008353D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9E00B29CC4548008353D8 /* AppDelegate.swift */; };
 		6EF9E00E29CC4548008353D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF9E00D29CC4548008353D8 /* SceneDelegate.swift */; };
 		6EF9E01329CC4548008353D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF9E01129CC4548008353D8 /* Main.storyboard */; };
@@ -70,8 +71,10 @@
 		6E5BA29C29CF7B8A00539249 /* CarazCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarazCoreDataManager.swift; sourceTree = "<group>"; };
 		6EA6D1A529CF8FC500E15C6A /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 		6EA6D1A729CF9E9500E15C6A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6EA6D1AA29CFA03100E15C6A /* city-list-FR.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "city-list-FR.json"; sourceTree = "<group>"; };
+		6EA6D1AC29CFA0AE00E15C6A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		6EA6D1AE29CFA68500E15C6A /* Extension+MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+MKMapView.swift"; sourceTree = "<group>"; };
 		6EEE4F5E29CE4E69004A072C /* WeatherListId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListId.swift; sourceTree = "<group>"; };
-		6EEE4F6229CEF55B004A072C /* city-list-FR.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "city-list-FR.json"; path = "../../../../open-classroom/mini-code/city-list-FR.json"; sourceTree = "<group>"; };
 		6EF9E00829CC4548008353D8 /* Caraz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caraz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF9E00B29CC4548008353D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF9E00D29CC4548008353D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +158,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		6EA6D1A929CFA02000E15C6A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				6EA6D1AA29CFA03100E15C6A /* city-list-FR.json */,
+				6EA6D1AC29CFA0AE00E15C6A /* LocationManager.swift */,
+				6EA6D1AE29CFA68500E15C6A /* Extension+MKMapView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		6EF9DFFF29CC4548008353D8 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +242,7 @@
 		6EF9E04529CDB7FE008353D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				6EA6D1A929CFA02000E15C6A /* Location */,
 				6E5BA29929CF7AFC00539249 /* CoreData */,
 				6EF9E04829CDBFAD008353D8 /* Model */,
 				6E340F0329CDE87200C4E00B /* Network */,
@@ -236,7 +250,6 @@
 				6EA6D1A529CF8FC500E15C6A /* SegueIdentifier.swift */,
 				6EF9E04629CDB813008353D8 /* Texts.swift */,
 				6E340F1029CDEAE700C4E00B /* ErrorType.swift */,
-				6EEE4F6229CEF55B004A072C /* city-list-FR.json */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -356,7 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EF9E01B29CC454F008353D8 /* LaunchScreen.storyboard in Resources */,
-				6EEE4F6329CEF55B004A072C /* city-list-FR.json in Resources */,
 				6EF9E01829CC454F008353D8 /* Assets.xcassets in Resources */,
 				6EF9E01329CC4548008353D8 /* Main.storyboard in Resources */,
 			);
@@ -390,6 +402,7 @@
 				6E340F0229CDE4AD00C4E00B /* WeatherViewController.swift in Sources */,
 				6EF9E04429CDB2E4008353D8 /* GarageView.swift in Sources */,
 				6EF9E00C29CC4548008353D8 /* AppDelegate.swift in Sources */,
+				6EA6D1AD29CFA0AE00E15C6A /* LocationManager.swift in Sources */,
 				6E340F1129CDEAE700C4E00B /* ErrorType.swift in Sources */,
 				6EF9E00E29CC4548008353D8 /* SceneDelegate.swift in Sources */,
 				6E5BA29B29CF7B2C00539249 /* CoreDataStack.swift in Sources */,
@@ -403,6 +416,7 @@
 				6E340F0729CDE8BA00C4E00B /* NetworkProtocol.swift in Sources */,
 				6E340F0B29CDE91700C4E00B /* WeatherRouter.swift in Sources */,
 				6E340F1429CDECBA00C4E00B /* WeatherService.swift in Sources */,
+				6EA6D1AF29CFA68500E15C6A /* Extension+MKMapView.swift in Sources */,
 				6EF9E04A29CDBFC0008353D8 /* CarUI.swift in Sources */,
 				6E340F0029CDE49800C4E00B /* WeatherView.swift in Sources */,
 			);
@@ -585,6 +599,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Caraz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Used to autofill the start/end location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -614,6 +629,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Caraz/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Used to autofill the start/end location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
