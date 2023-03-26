@@ -23,15 +23,11 @@ class CarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         carView = view as? CarView
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
         guard let carUI = carUI else {
             return
         }
-        carView.configure(car: carUI)
+        carView.configure(car: carUI)        
     }
     
     // MARK: Update distance traveled
@@ -82,6 +78,13 @@ extension CarViewController {
             }
             actionHandler?(textField.text)
             self.updateDistance(distance: textField.text)
+            
+            guard let car =  self.carUI else {
+                actionHandler?(nil)
+                return
+            }
+            
+            self.carView.configure(car: car)
         }))
         alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
         

@@ -25,4 +25,5 @@ enum Texts: String {
     case progressLabel1 = "Vous avez parcouru "
     case progressLabel2 = " km. Votre reservoir est donc rempli à "
     
+    case updateButton = "Mettre à jour mon parcours"
 }

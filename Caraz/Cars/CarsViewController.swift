@@ -23,12 +23,12 @@ class CarsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCars()
-        configureTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        getCars()
+        configureTableView()
         tableView.reloadData()
     }
     

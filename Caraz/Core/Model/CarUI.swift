@@ -48,16 +48,9 @@ struct CarUI {
         self.convertible = carCD.convertible
     }
     
-    var progress: String {
-        guard let distanceTraveled = distanceTraveled else { return "pas de valeur" }
+    var progressDecimal: Float {
+        guard let distanceTraveled = distanceTraveled else { return 0 }
         
-        var percentage: Double = 0
-        if distanceTraveled == 0 {
-            percentage = 100
-        } else {
-            percentage = distanceTraveled * 100 / tankAutonomy
-        }
-        
-        return String(Int(percentage))
+        return Float(1 - (distanceTraveled / tankAutonomy))
     }
 }
