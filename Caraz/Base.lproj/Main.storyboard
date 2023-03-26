@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IvF-hh-67P">
-                                <rect key="frame" x="0.0" y="102.99999999999997" width="393" height="406.33333333333326"/>
+                                <rect key="frame" x="0.0" y="103.00000000000003" width="393" height="460.66666666666674"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rUb-xa-dGK">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="221"/>
@@ -194,6 +194,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-IC-Ckp">
+                                        <rect key="frame" x="0.0" y="426.33333333333337" width="393" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapUpdateButton" destination="mu9-E8-2G4" eventType="touchUpInside" id="OZC-cv-9EF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="j2d-pN-so3" firstAttribute="leading" secondItem="IvF-hh-67P" secondAttribute="leading" id="2Un-on-KQs"/>

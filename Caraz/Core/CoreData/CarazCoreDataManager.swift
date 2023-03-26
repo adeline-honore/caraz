@@ -41,11 +41,31 @@ final class CarazCoreDataManager {
     
     
     func getEntities() throws -> [CarCD] {
-            let request: NSFetchRequest<CarCD> = CarCD.fetchRequest()
-            do {
-                return try coreDataStack.viewContext.fetch(request)
-            } catch {
-                throw error
-            }
+        let request: NSFetchRequest<CarCD> = CarCD.fetchRequest()
+        do {
+            return try coreDataStack.viewContext.fetch(request)
+        } catch {
+            throw error
         }
+    }
+    
+    func setEntity(carUI: CarUI) throws {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CarCD")
+        request.predicate = NSPredicate(format:"id = %@", carUI.id)
+        
+        if let results = try coreDataStack.viewContext.fetch(request) as? [NSManagedObject] {
+            if results.count > 0 {
+                results[0].setValue(carUI.distanceTraveled, forKey: "distanceTraveled")
+                
+                do {
+                    try coreDataStack.viewContext.save()
+                } catch {
+                    throw error
+                }
+            }
+        } else {
+            print("oups")
+        }
+    }
 }
