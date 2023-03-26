@@ -21,4 +21,8 @@ enum Texts: String {
     // MARK: Cars
     case titleForHeaderInSection = "Vos voitures"
     
+    // MARK: Car
+    case progressLabel1 = "Vous avez parcouru "
+    case progressLabel2 = " km. Votre reservoir est donc rempli à "
+    
 }

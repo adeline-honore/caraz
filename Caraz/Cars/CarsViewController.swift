@@ -50,6 +50,18 @@ class CarsViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: CarTableViewCell.identifier)
     }
     
+    // MARK: - View details of car
+    
+    func sendCarUI() {
+        performSegue(withIdentifier: SegueIdentifier.fromCarsToCar.rawValue, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifier.fromCarsToCar.rawValue {
+            let viewController = segue.destination as? CarViewController
+            viewController?.carUI = carUI
+        }
+    }
 }
 
 extension CarsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -76,5 +88,6 @@ extension CarsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         carUI = carsUI[indexPath.row]
+        sendCarUI()
     }
 }

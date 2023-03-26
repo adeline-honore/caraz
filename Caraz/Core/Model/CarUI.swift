@@ -47,4 +47,17 @@ struct CarUI {
         self.picture = UIImage(data: carCD.pictureBianry!) ?? UIImage()
         self.convertible = carCD.convertible
     }
+    
+    var progress: String {
+        guard let distanceTraveled = distanceTraveled else { return "pas de valeur" }
+        
+        var percentage: Double = 0
+        if distanceTraveled == 0 {
+            percentage = 100
+        } else {
+            percentage = distanceTraveled * 100 / tankAutonomy
+        }
+        
+        return String(Int(percentage))
+    }
 }

@@ -10,4 +10,6 @@ import Foundation
 enum SegueIdentifier: String {
     
     case fromGarageToWeather = "fromGarageToWeather"
+    
+    case fromCarsToCar = "fromCarsToCar"
 }
