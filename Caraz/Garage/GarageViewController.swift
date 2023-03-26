@@ -60,6 +60,8 @@ class GarageViewController: UIViewController {
         } catch {
             print("error to save cars into Core Data")
         }
+        
+        performSegue(withIdentifier: SegueIdentifier.fromGarageToPresentation.rawValue, sender: nil)
     }
     
     // MARK: - get cars from Core Data

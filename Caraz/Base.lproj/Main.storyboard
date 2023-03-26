@@ -253,6 +253,71 @@
             </objects>
             <point key="canvasLocation" x="-1176" y="3019"/>
         </scene>
+        <!--Presentation View Controller-->
+        <scene sceneID="BRW-Hw-XO0">
+            <objects>
+                <viewController id="4C4-8O-hQk" customClass="PresentationViewController" customModule="Caraz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2IH-pA-per" customClass="PresentationView" customModule="Caraz" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ytE-Up-40Y">
+                                <rect key="frame" x="28" y="245" width="337" height="293"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMs-gv-cPz">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="189.33333333333334"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JMs-gv-cPz" secondAttribute="height" multiplier="16:9" id="z65-ws-CHe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHE-Tc-7GH">
+                                        <rect key="frame" x="0.0" y="209.33333333333331" width="337" height="39.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coC-Hq-bRc">
+                                        <rect key="frame" x="0.0" y="269" width="337" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-S4-QmL">
+                                <rect key="frame" x="344" y="71" width="37" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="3LE-dC-jv0"/>
+                                    <constraint firstAttribute="width" secondItem="yRt-S4-QmL" secondAttribute="height" multiplier="36:35" id="JeF-B9-fzH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X"/>
+                                <connections>
+                                    <action selector="didTapCancelButton" destination="4C4-8O-hQk" eventType="touchUpInside" id="GDB-f2-tE1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VMV-cx-5Tf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ytE-Up-40Y" firstAttribute="leading" secondItem="VMV-cx-5Tf" secondAttribute="leading" constant="28" id="0Wo-Ry-bq3"/>
+                            <constraint firstItem="ytE-Up-40Y" firstAttribute="centerX" secondItem="2IH-pA-per" secondAttribute="centerX" id="Fvp-dp-N10"/>
+                            <constraint firstItem="ytE-Up-40Y" firstAttribute="centerY" secondItem="2IH-pA-per" secondAttribute="centerY" id="YVX-qw-Cbb"/>
+                            <constraint firstItem="yRt-S4-QmL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VMV-cx-5Tf" secondAttribute="leading" symbolic="YES" id="bgD-M1-aeY"/>
+                            <constraint firstItem="yRt-S4-QmL" firstAttribute="top" secondItem="VMV-cx-5Tf" secondAttribute="top" constant="12" id="pKY-Pp-Bp7"/>
+                            <constraint firstItem="VMV-cx-5Tf" firstAttribute="trailing" secondItem="yRt-S4-QmL" secondAttribute="trailing" constant="12" id="u7q-dm-Oez"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="explainLabel" destination="coC-Hq-bRc" id="Mdk-j3-f3F"/>
+                            <outlet property="logoImage" destination="JMs-gv-cPz" id="xZ1-jF-td1"/>
+                            <outlet property="welcomeLabel" destination="VHE-Tc-7GH" id="gBt-qd-ffP"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgw-UV-SHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182.44274809160305" y="-923.23943661971839"/>
+        </scene>
         <!--Garage View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -324,6 +389,9 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="BmD-ad-40Z"/>
+                    <connections>
+                        <segue destination="4C4-8O-hQk" kind="presentation" identifier="fromGarageToPresentation" id="IQz-lM-pk6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,10 @@ import Foundation
 
 enum Texts: String {
     
+    // MARK: Presentation
+    case welcomePresentation = "Bienvenue sur l'application Caraz"
+    case explainPresentation = "Grâce à elle, vous pourrez choisir votre voiture en fonction de la météo, et avoir un suivi de votre voiture."
+    
     // MARK: Garage
     case welcomeLabelText = "Bienvenue"
     case actionLabelText = "Choisir une voiture entre :"

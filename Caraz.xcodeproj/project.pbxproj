@@ -19,6 +19,8 @@
 		6E340F1429CDECBA00C4E00B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E340F1329CDECBA00C4E00B /* WeatherService.swift */; };
 		6E5BA29B29CF7B2C00539249 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BA29A29CF7B2C00539249 /* CoreDataStack.swift */; };
 		6E5BA29D29CF7B8A00539249 /* CarazCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BA29C29CF7B8A00539249 /* CarazCoreDataManager.swift */; };
+		6E91DC2729D0DD15003174B6 /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91DC2629D0DD15003174B6 /* PresentationViewController.swift */; };
+		6E91DC2929D0DE44003174B6 /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91DC2829D0DE44003174B6 /* PresentationView.swift */; };
 		6EA6D1A629CF8FC500E15C6A /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1A529CF8FC500E15C6A /* SegueIdentifier.swift */; };
 		6EA6D1A829CF9E9500E15C6A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1A729CF9E9500E15C6A /* MapViewController.swift */; };
 		6EA6D1AD29CFA0AE00E15C6A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA6D1AC29CFA0AE00E15C6A /* LocationManager.swift */; };
@@ -74,6 +76,8 @@
 		6E340F1329CDECBA00C4E00B /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		6E5BA29A29CF7B2C00539249 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6E5BA29C29CF7B8A00539249 /* CarazCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarazCoreDataManager.swift; sourceTree = "<group>"; };
+		6E91DC2629D0DD15003174B6 /* PresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
+		6E91DC2829D0DE44003174B6 /* PresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
 		6EA6D1A529CF8FC500E15C6A /* SegueIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 		6EA6D1A729CF9E9500E15C6A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6EA6D1AA29CFA03100E15C6A /* city-list-FR.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "city-list-FR.json"; sourceTree = "<group>"; };
@@ -168,6 +172,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		6E91DC2529D0DCEC003174B6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6E91DC2629D0DD15003174B6 /* PresentationViewController.swift */,
+				6E91DC2829D0DE44003174B6 /* PresentationView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		6EA6D1A929CFA02000E15C6A /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +238,7 @@
 				6EF9E04529CDB7FE008353D8 /* Core */,
 				6EF9E04229CDB2C2008353D8 /* Garage */,
 				6EF9E04029CC5A32008353D8 /* Map */,
+				6E91DC2529D0DCEC003174B6 /* Presentation */,
 				6E340EFE29CDE47200C4E00B /* Weather */,
 				6EF9E00B29CC4548008353D8 /* AppDelegate.swift */,
 				6EF9E00D29CC4548008353D8 /* SceneDelegate.swift */,
@@ -440,6 +454,7 @@
 				6E340F1129CDEAE700C4E00B /* ErrorType.swift in Sources */,
 				6EF9E00E29CC4548008353D8 /* SceneDelegate.swift in Sources */,
 				6E5BA29B29CF7B2C00539249 /* CoreDataStack.swift in Sources */,
+				6E91DC2929D0DE44003174B6 /* PresentationView.swift in Sources */,
 				6EA6D1A629CF8FC500E15C6A /* SegueIdentifier.swift in Sources */,
 				6EA6D1A829CF9E9500E15C6A /* MapViewController.swift in Sources */,
 				6E340F0929CDE8DF00C4E00B /* RouterProtocol.swift in Sources */,
@@ -455,6 +470,7 @@
 				6EA6D1AF29CFA68500E15C6A /* Extension+MKMapView.swift in Sources */,
 				6EF9E04A29CDBFC0008353D8 /* CarUI.swift in Sources */,
 				6E340F0029CDE49800C4E00B /* WeatherView.swift in Sources */,
+				6E91DC2729D0DD15003174B6 /* PresentationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
