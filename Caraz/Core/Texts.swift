@@ -18,4 +18,7 @@ enum Texts: String {
     
     case weatherButton = "Choisir une voiture en fonction du temps"
     
+    // MARK: Cars
+    case titleForHeaderInSection = "Vos voitures"
+    
 }
