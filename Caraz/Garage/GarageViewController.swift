@@ -19,6 +19,8 @@ class GarageViewController: UIViewController {
         managedObjectContext: CoreDataStack().viewContext)
     private var carsUI: [CarUI] = []
     
+    private let logo = UIImage(imageLiteralResourceName: "logo")
+    
     // MARK: - Init
     
     override func viewDidLoad() {
@@ -26,17 +28,38 @@ class GarageViewController: UIViewController {
         
         garageView = view as? GarageView
         
+        // first start
+        if !UserDefaults.standard.bool(forKey: "ExecuteOnce") {
+            executeOnce()
+            UserDefaults.standard.set(true, forKey: "ExecuteOnce")
+        }
+        
         UserDefaults.standard.value(forKey: "carChoosen")
         
         getCars()
         configurePickerView()
         
-        // to save a new car
-//        saveCarIntoCoreData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         showCar()
+    }
+    
+    // MARK: - get cars from Core Data
+    private func executeOnce() {
+        
+        // creation of the two cars
+        let anaconda = CarUI(id: "AAA-BBB-CCC", name: "anaconda", brand: "mercedes", tankAutonomy: 800, picture: UIImage(named: "anaconda-mercedes") ?? logo, convertible: false)
+        
+        let grandCabrio = CarUI(id: "DDD-EEE-GGG", name: "grandCabrio", brand: "maserati", tankAutonomy: 1200, picture: UIImage(named: "grandCabrio-maserati") ?? logo, convertible: true)
+        
+        do {
+            try repository.createEntity(carUI: anaconda)
+            try repository.createEntity(carUI: grandCabrio)
+            
+        } catch {
+            print("error to save cars into Core Data")
+        }
     }
     
     // MARK: - get cars from Core Data
