@@ -55,23 +55,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVJ-K3-Xe8">
-                                <rect key="frame" x="329" y="127" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BVJ-K3-Xe8" secondAttribute="height" multiplier="1:1" id="8wA-vt-gx6"/>
-                                    <constraint firstAttribute="height" constant="32" id="jcS-4I-ijr"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LQj-wn-evN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Hbm-eU-Hno" firstAttribute="top" secondItem="yro-ar-fxz" secondAttribute="top" id="8II-y1-cEs"/>
-                            <constraint firstItem="LQj-wn-evN" firstAttribute="trailing" secondItem="BVJ-K3-Xe8" secondAttribute="trailing" constant="32" id="JTQ-wC-f1l"/>
                             <constraint firstItem="Hbm-eU-Hno" firstAttribute="bottom" secondItem="LQj-wn-evN" secondAttribute="bottom" id="Pr0-qW-wRY"/>
-                            <constraint firstItem="BVJ-K3-Xe8" firstAttribute="top" secondItem="LQj-wn-evN" secondAttribute="top" constant="24" id="njL-6A-Je7"/>
                             <constraint firstItem="Hbm-eU-Hno" firstAttribute="leading" secondItem="LQj-wn-evN" secondAttribute="leading" id="pVa-JG-Skn"/>
                             <constraint firstItem="LQj-wn-evN" firstAttribute="trailing" secondItem="Hbm-eU-Hno" secondAttribute="trailing" id="x4L-mZ-aCt"/>
                         </constraints>
@@ -545,7 +534,6 @@
         <image name="car" catalog="system" width="128" height="95"/>
         <image name="hand.point.right.fill" catalog="system" width="128" height="97"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -43,7 +43,7 @@ class WeatherViewController: UIViewController {
             case .success(let weather):
                 self.update(weatherDecode: weather)
             case .failure:
-                print("oups  ")
+                self.informationMessage(element: .noGetWeather)
             }
         }
     }
@@ -97,7 +97,7 @@ class WeatherViewController: UIViewController {
         loc.geocode { placemark, error in
             
             if let error = error as? CLError {
-                print("CLError:", error)
+                self.informationMessage(element: .noLocationDecoded)
                 return
             } else if let placemark = placemark?.first {
                 DispatchQueue.main.async {

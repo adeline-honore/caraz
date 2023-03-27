@@ -70,6 +70,6 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        ErrorType.locationManager
     }
 }

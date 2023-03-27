@@ -58,7 +58,7 @@ class GarageViewController: UIViewController {
             try repository.createEntity(carUI: grandCabrio)
             
         } catch {
-            print("error to save cars into Core Data")
+            informationMessage(element: .noCarSaved)
         }
         
         performSegue(withIdentifier: SegueIdentifier.fromGarageToPresentation.rawValue, sender: nil)
@@ -71,7 +71,7 @@ class GarageViewController: UIViewController {
             let carsCD = try repository.getEntities()
             carsUI = carsCD.map { CarUI(carCD: $0)}
         } catch {
-            print("error to get cars from Core Data")
+            informationMessage(element: .noGetCars)
         }
     }
     
@@ -139,6 +139,7 @@ extension GarageViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         
         if row != 0 {
             UserDefaults.standard.set(pickerViewArray[row], forKey: "carChoosen")
+            showCar()
         }
     }
 }
@@ -159,7 +160,7 @@ extension GarageViewController {
         do {
             try self.repository.createEntity(carUI: carToSave)
         } catch {
-            print("error to save into Core Data")
+            informationMessage(element: .noCarSaved)
         }
     }
 }

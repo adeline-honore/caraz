@@ -65,7 +65,7 @@ final class CarazCoreDataManager {
                 }
             }
         } else {
-            print("oups")
+            ErrorType.coredataError
         }
     }
 }

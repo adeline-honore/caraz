@@ -47,7 +47,7 @@ class CarViewController: UIViewController {
                 guard let car = carUI else { return }
                 try repository.setEntity(carUI: car)
             } catch {
-                print("error updateDistance")
+                informationMessage(element: .noUpdateDistance)
             }
         }
         

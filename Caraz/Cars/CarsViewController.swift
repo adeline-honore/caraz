@@ -39,7 +39,7 @@ class CarsViewController: UIViewController {
             let carsCD = try repository.getEntities()
             carsUI = carsCD.map { CarUI(carCD: $0)}
         } catch {
-            print("error to get cars from Core Data")
+            informationMessage(element: .noGetCars)
         }
     }
     
