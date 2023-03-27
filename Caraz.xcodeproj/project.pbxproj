@@ -12,6 +12,8 @@
 		6E0CC56429D1C0A4001671BD /* TestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CC56329D1C0A4001671BD /* TestCase.swift */; };
 		6E0CC56629D1C0F0001671BD /* NetworkFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CC56529D1C0F0001671BD /* NetworkFake.swift */; };
 		6E0CC56829D1C28B001671BD /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E0CC56729D1C28B001671BD /* Weather.json */; };
+		6E0CC57029D1C757001671BD /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CC56F29D1C757001671BD /* TestCoreDataStack.swift */; };
+		6E0CC57229D1C7B8001671BD /* TestCarCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0CC57129D1C7B8001671BD /* TestCarCoreDataManager.swift */; };
 		6E340F0029CDE49800C4E00B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E340EFF29CDE49800C4E00B /* WeatherView.swift */; };
 		6E340F0229CDE4AD00C4E00B /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E340F0129CDE4AD00C4E00B /* WeatherViewController.swift */; };
 		6E340F0529CDE88F00C4E00B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E340F0429CDE88F00C4E00B /* Network.swift */; };
@@ -74,6 +76,8 @@
 		6E0CC56329D1C0A4001671BD /* TestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCase.swift; sourceTree = "<group>"; };
 		6E0CC56529D1C0F0001671BD /* NetworkFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFake.swift; sourceTree = "<group>"; };
 		6E0CC56729D1C28B001671BD /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
+		6E0CC56F29D1C757001671BD /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		6E0CC57129D1C7B8001671BD /* TestCarCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCarCoreDataManager.swift; sourceTree = "<group>"; };
 		6E340EFF29CDE49800C4E00B /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		6E340F0129CDE4AD00C4E00B /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		6E340F0429CDE88F00C4E00B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -142,6 +146,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E0CC56B29D1C6E8001671BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6E0CC56729D1C28B001671BD /* Weather.json */,
+				6E0CC56329D1C0A4001671BD /* TestCase.swift */,
+				6E0CC56529D1C0F0001671BD /* NetworkFake.swift */,
+				6EF9E02529CC4550008353D8 /* CarazTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6E0CC56C29D1C710001671BD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6E0CC56F29D1C757001671BD /* TestCoreDataStack.swift */,
+				6E0CC57129D1C7B8001671BD /* TestCarCoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		6E340EFE29CDE47200C4E00B /* Weather */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,10 +286,8 @@
 		6EF9E02429CC4550008353D8 /* CarazTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E0CC56729D1C28B001671BD /* Weather.json */,
-				6E0CC56329D1C0A4001671BD /* TestCase.swift */,
-				6E0CC56529D1C0F0001671BD /* NetworkFake.swift */,
-				6EF9E02529CC4550008353D8 /* CarazTests.swift */,
+				6E0CC56C29D1C710001671BD /* CoreData */,
+				6E0CC56B29D1C6E8001671BD /* Network */,
 			);
 			path = CarazTests;
 			sourceTree = "<group>";
@@ -494,9 +516,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0CC57229D1C7B8001671BD /* TestCarCoreDataManager.swift in Sources */,
 				6E0CC56629D1C0F0001671BD /* NetworkFake.swift in Sources */,
 				6EF9E02629CC4550008353D8 /* CarazTests.swift in Sources */,
 				6E0CC56429D1C0A4001671BD /* TestCase.swift in Sources */,
+				6E0CC57029D1C757001671BD /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
