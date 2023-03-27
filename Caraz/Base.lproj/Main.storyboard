@@ -219,28 +219,11 @@
                         <segue destination="ipu-Rx-GWL" kind="relationship" relationship="viewControllers" id="Aid-pb-iQT"/>
                         <segue destination="CSy-Ay-C7J" kind="relationship" relationship="viewControllers" id="3wM-0j-rz6"/>
                         <segue destination="pz5-6u-9Lb" kind="relationship" relationship="viewControllers" id="0lp-R4-pwW"/>
-                        <segue destination="7PZ-YU-hpl" kind="relationship" relationship="viewControllers" id="uBe-kM-H8K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6o-ha-voU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2120" y="932"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="V2A-Y3-8Gf">
-            <objects>
-                <viewController id="7PZ-YU-hpl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EGf-dP-JBK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Nhw-mf-I6X"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="hand.point.right.fill" catalog="system" id="d7t-CE-KXs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7RK-TY-MOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1176" y="3019"/>
         </scene>
         <!--Presentation View Controller-->
         <scene sceneID="BRW-Hw-XO0">
@@ -532,7 +515,6 @@
     </scenes>
     <resources>
         <image name="car" catalog="system" width="128" height="95"/>
-        <image name="hand.point.right.fill" catalog="system" width="128" height="97"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
